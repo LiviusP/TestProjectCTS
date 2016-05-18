@@ -14,15 +14,19 @@ import org.junit.runners.Suite;
         FactoryImobilTest.class,
         GarsonieraTest.class,
         ProprietateTest.class,
-        TestCaseAchizitie.class
+        TestCaseAchizitie.class,
+        ApartamentTest.class,
+        CasaTest.class,
+        ClientBuilderTest.class
 })
 public class TestSuite {
 
     public static void main(String[] args) {
         Result result = JUnitCore.runClasses(TestSuite.class);
+        System.out.println("Number of tests : " + result.getRunCount());
         for (Failure failure : result.getFailures()) {
-            System.out.println(failure.toString());
+            System.out.println("FAIL: " + failure.toString());
         }
-        System.out.println(result.wasSuccessful());
+        System.out.println("All test succesfull? " + result.wasSuccessful());
     }
 }
